@@ -1,0 +1,469 @@
+<!doctype html>
+<html>
+    <head>
+		<!--声明当前页面的编码集:charset=gbk,gb2312(中文编码)，utf-8国际编码-->
+		<meta charset="UTF-8">
+		<meta name="Keywords" content="锤子科技, 锤子手机, Smartisan, SmartisanOS, SmartisanROM">
+		<meta name="Description" content="锤子科技是一家制造移动互联网终端设备的公司，公司的使命是用完美主义的工匠精神，打造用户体验一流的数码消费类产品（智能手机为主），改善人们的生活质量.">
+		<title>在线商城 - 锤子科技</title>
+
+		<!--css,js-->	
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			li{list-style:none;}
+			a{text-decoration:none;color:#000;}
+			body{background:#E6E6E6;display:block;height:6452px;}
+			.wrap{font-size:12px;font-family:"微软雅黑";min-width:1140px;}
+			/*S header*/
+			.wrap #header{width:100%;height:100px;background:red;background:url("images/header-black-bg .png")left top repeat-X;}
+			#header .header_content{width:1120px;background:red;margin:0 auto;}
+			.header_content .logo{width:50px;height:50px;display:block;padding:25px 0 0;float:left;}
+			.header_content .disembark{border:1px solid #2E2E2E;float:right;width:100px;height:28px;margin-top:39px;line-height:28px;text-align:center;color:#ccc;border-radius:4px;background:linear-gradient(#181818,#131313);cursor:pointer;}
+			.header_content .nav{float:right;}
+			.header_content .nav ul li{float:left;padding:42px 25px 0 0;}
+			.header_content .nav ul li a{color:#ccc;font-size:14px;padding:25px 20px 0 0;transition:all .3s ease;}
+			.header_content .nav ul li a:hover{color:#fff;transition:all .3s ease;}
+			/*E header*/
+			/*S s_nav*/
+			#s_nav{width:100%;height:90px;}
+			#s_nav .s_nav_content{width:1120px;margin:0 auto;padding:37px 0 0;}
+			#s_nav .s_nav_content ul li{float:left;font-size:14px;padding-left:40px;}
+			#s_nav .s_nav_content ul li a{color:#666;transition:all .3s ease;}
+			#s_nav .s_nav_content ul li a:hover{color:#84a3e3;transition:all .3s ease;}
+			.s_nav_content .shopcar{height:40px;float:right;position:relative;}
+			.s_nav_content .shopcar a{background:url("images/btn-icon.png")-16px -467px no-repeat;text-indent:30px;display:block;color:#666;font-size:14px;float:left;}
+			.s_nav_content .shopcar span{float:right;height:18px;display:inline-block;padding:0 6px;border-radius:50%;border:1px solid #838383;margin-left:8px;color:#fff;font-weight:600;background:linear-gradient(#A4A4A4,#909090);}
+			.s_nav_content .shopcar .empty{width:312px;height:57px;background-color:#fff;position:absolute;top:40px;right:-18px;padding-top:115px;border-radius:6px;line-height:57px;text-align:center;font-size:14px;background-image:url("images/cart-empty-bg.png");background-repeat:no-repeat;background-position:center 30px;display:none;z-index:10;}
+			.s_nav_content .shopcar .empty:after{content:"";border-right:10px solid transparent;border-left:10px solid transparent;border-bottom:12px solid #fff;position:absolute;top:-10px;right:18px;}
+			.s_nav_content .shopcar:hover .empty{display:block;}
+			/*E s_nav*/
+			/*S content*/
+			#content{width:1124px;margin:0 auto;position:relative;top:-20px;}
+			/*S ulList*/
+			.ulList{width:1124px;height:484px;position:relative;}
+			.ulList li{position:absolute;top:0;left:0;display:none;}
+			.ulList li:nth-child(1){display:block;}
+			.list1{width:60px;height:60px;position:absolute;bottom:0;left:0;right:0;margin:0 auto;}
+			.list1 li{width:18px;height:18px;background:#338fdb;float:left;margin-left:8px;cursor:pointer;}
+			.list1 .list1_btn1{background:url("images/loop-dot.png");}
+			.list1 .list1_btn2{background:url("images/loop-dot.png");}
+			.list1 .select{background-position:0 -18px;}
+			/*S ulList*/
+			/*S banner_jianguo_all*/
+			.banner_jianguo_all{width:1124px;height:464px;margin:-10px auto 15px;position:relative;}
+			.banner_jianguo_all a{width:50%;height:100%;display:block;float:left;position:relative;z-index:10;}
+			.banner_jianguo_all img{position:absolute;left:0;top:0;}
+			/*E banner_jianguo_all*/
+			/*S product-show-box*/
+			.product-show-box{width:1124px;height:1040px;margin:0 auto;border-radius:8px;margin-bottom:10px;}
+			.product-show-box .item-info{height:640px;width:1124px;position:relative;background:#fff;border-radius: 8px 8px 0 0;}
+			.product-show-box .item-info1{position:relative;height:320px;width:749px;border-bottom:1px solid #ccc;}
+			.special-01{position:absolute;right:20px;top:60px;}
+			.special-02{position:absolute;right:20px;top:90px;}
+			.special-03{position:absolute;right:66px;top:155px;}
+			.product-show-box .item-info1 .text{width:300px;height:188px;position:absolute;top:100px;left:60px;text-align:center;}
+			.product-show-box  .text h2{color:#4c4c4c;font-size:24px;font-weight:400;line-height:55px;}
+			.product-show-box  .text h6{color:#b2b2b2;font-size:14px;font-weight:400;}
+			.product-show-box  .text p{color:#de4037;font-size:24px;font-weight:500;line-height:72px;}
+			.product-show-box  .text span{font-size:14px;}
+			.product-show-box .item-info2{width:374px;height:641px;position:absolute;top:0;right:0;border-left:1px solid #ccc;border-bottom:1px solid #ccc;}
+			.product-show-box .item-info2 .text{width:300px;height:105px;margin:45px auto 0;text-align:center;}
+			.product-show-box .item-info2 .text p{line-height:40px;}
+			/*E product-show-box*/
+			/*S item-smartisan-tshirt*/
+			.item-smartisan-tshirt{width:100%;height:400px;background:#fff;margin-bottom:10px;border-radius: 0 0 8px 8px;}
+			.item-smartisan-tshirt .item{width:374px;height:400px;float:left;position:relative;}
+			.item-smartisan-tshirt img{margin:85px auto 0;display:block;}
+			.item-smartisan-tshirt .item-info-color{width:133px;height:23px;background:red;position:absolute;top:23px;left:35px;background:url("images/smartisan-t-color.png");}
+			.item-smartisan-tshirt .item .text1{position:absolute;left:40px;bottom:30px;}
+			.item-smartisan-tshirt .item .text1 h2{font-size:18px;color:#4c4c4c;font-weight:400;line-height:30px;}
+			.item-smartisan-tshirt .item .text1 h6{font-size:12px;color:#b2b2b2;font-size:14px;font-weight:400;}
+			.item-smartisan-tshirt .item .text1 p{position:absolute;right: -105px;bottom:-23px;color:#de4037;font-size:24px;font-weight:500;line-height:72px;}
+			.tshirt-woman{border-left:1px solid #ccc;border-right:1px solid #ccc;}
+			.item-info1:hover{box-shadow:0 0 30px #ccc inset;transition:all 0.5s ease;}
+			.item-info2:hover{box-shadow:0 0 30px #ccc inset;transition:all 0.5s ease;}
+			.item:hover{box-shadow:0 0 30px #ccc inset;transition:all 0.5s ease;}
+			/*E item-smartisan-tshirt*/
+			/*E content*/
+			.shopping-info{width:1124px;height:153px;margin:0 auto;background:#fff;border-radius:8px;}
+			.shopping-info .online-services{width:279px;height:100%;border:1px transparent #fff;float:left;}
+			.shopping-info .online-services span{width:36px;height:36px;display:block;margin:30px auto 0;background:url("images/shopping-info.png");opacity:0.6;}
+			.shopping-info .online-services span.online{cursor:pointer;}
+			.shopping-info .online-services span.online1{background-position:-45px 0;}
+			.shopping-info .online-services span.online2{background-position:-100px 0;}
+			.shopping-info .online-services span.online3{background-position:55px 0;}
+			.shopping-info .online-services span:hover{opacity:1;}
+			.shopping-info .online-services h5{font-size:16px;font-weight:400;text-align:center;line-height:40px;}
+			.shopping-info .online-services h6{font-size:12px;font-weight:400;text-align:center;color:#a3a3a3;}
+
+			.footer{width:100%;height:300px;background:#fff;margin-top:10px;}
+			.service{width:1124px;height:236px;margin:0 auto;background:#fff;}
+			.service div.info{width:100%;height:215px;border-bottom:1px solid #ccc;}
+			.service div.info ul{width:173px;height:169px;padding-top:45px;float:left;}
+			.service div.info ul h3{font-size:18px;font-weight:400;line-height:40px;}
+			.service div.info ul li a{color:#757575;line-height:25px;}
+			.service div.info div.online{width:240px;height:110px;float:right;padding-top:50px;}
+			.service div.info div.online .consult{display:block;width:115px;height:35px;background:url("images/need-help-button.png");}
+			.service div.info div.online a{color:#fff;text-align:center;line-height:35px;font-size:16px;font-weight:400;text-indent:25px;float:right;}
+			.service div.info div.online p a{font-size:30px;color:#000;line-height:55px;}
+			.service div.info div.online p span{display:block;color:#747474;font-size:14px;float:right;}
+
+			.copy-label{width:645px;margin-top:20px;}
+			.copy-label a{color:#9cd5e7;line-height:20px;}
+			.copy-label span{color:#747474;display:block;}
+
+			#button{width:30px;height:30px;background:url("images/to-top.png");position:fixed;bottom:30px;right:10px;z-index:99;cursor:pointer;opacity:0.6;display:none;}
+			#button:hover{opacity:1;}
+		</style>
+	</head>
+
+<body>
+
+	<div class="wrap">
+		<!--S header-->
+		<div id="header">
+			<div class="header_content">
+				<a class="logo" href="###">
+					<img src="images/smartisan-logo.png"/>
+				</a>
+				<div class="disembark">登陆</div>
+				<div class="nav">
+					<ul>
+						<li><a href="###" style="color:#fff;">在线商城</a></li>
+						<li><a href="###">Smartisan T2</a></li>
+						<li><a href="###">坚果手机</a></li>
+						<li><a href="###">欢喜云</a></li>
+						<li><a href="###">应用下载</a></li>
+						<li><a href="###">官方论坛</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--E header-->
+		<!--S s_nav-->
+		<div id="s_nav">
+			<div class="s_nav_content">
+				<ul>
+					<li style="padding-left:9px"><a href="###" style="font-weight:600;">商城首页</a></li>
+					<li><a href="###">手机</a></li>
+					<li><a href="###">耳机 / 音响</a></li>
+					<li><a href="###">背壳 / 保护套</a></li>
+					<li><a href="###">“情怀”背壳</a></li>
+					<li><a href="###">其他周边</a></li>
+					<li><a href="###">保修服务</a></li>
+					<li><a href="###">全部商品</a></li>
+				</ul>
+				<div class="shopcar">
+					<a href="###">购物车</a>
+					<span>0</span>
+					<div class="empty">您的购物车还未添加商品</div>
+				</div>
+			</div>	
+		</div>
+		<!--E s_nav-->
+		<!--S content-->
+		<div id="content">
+			<!--S ulList-->
+			<ul class="ulList">
+				<li>
+					<a href="###"><img src="images/home-t2-banner.png" /></a>
+				</li>
+				<li>
+					<a href="###"><img src="images/home-jianguo-banner.png" /></a>
+				</li>
+			</ul>
+			<ul class="list1">	
+			</ul>
+			<!--E ulList-->
+		</div>
+		<!--S banner_jianguo_all-->
+		<div class="banner_jianguo_all">
+			<a href="###" title="坚果手机全网通">
+				<img src="images/home-jianguo-all-banner.png" />
+			</a>
+		</div>
+		<div class="banner_jianguo_all">
+			<a href="###" title="FIIL 头戴式线控音乐耳机">
+				<img src="images/home-fiil-banner.png" />
+			</a>
+		</div>
+		<div class="banner_jianguo_all">
+			<a href="###" title="JBL E10 耳机五色可选">
+				<img src="images/home-cover-jbl-banner.png" />
+			</a>
+		</div>
+		<div class="banner_jianguo_all">
+			<a href="###" title="企业专属版"></a>
+			<a href="###" title="手机回收置换计划"></a>
+			<img src="images/home-company-banner.png" />
+		</div>
+		<div class="banner_jianguo_all">
+			<a href="###" title="Smartisan T2 手机保护套">
+				<img src="images/home-cover-t2-banner.png" />
+			</a>
+		</div>
+		<div class="banner_jianguo_all">
+			<a href="###" title="S-1000 BASS（红色，低频增强线控版）">
+				<img src="images/home-headset-banner.png" />
+			</a>
+		</div>
+		<div class="banner_jianguo_all">
+			<a href="###" title="坚果手机普通版 7 款彩色背盖"></a>
+			<a href="###" title="坚果手机文青版 8 款彩色背盖"></a>
+			<img src="images/home-cover-banner.png" />
+		</div>
+		<!--E banner_jianguo_all-->
+		<!--S product-show-box-->
+		<div class="product-show-box">
+			<div class="item-info">
+				<div class="item-info1">
+					<img src="images/home-special-01.png" class="special-01" />
+					<div class="text">
+						<h2>七款彩色不透明保护套</h2>
+						<h6>仅适用于坚果手机</h6>
+						<p><span>￥</span>29</p>
+					</div>
+				</div>
+				<div class="item-info1">
+					<img src="images/home-prod-insurance.png" class="special-02 " />
+					<div class="text">
+						<h2>手机意外保修服务</h2>
+						<h6>“免费一次主机更换 ? ” “免费两次维修 ? ”</h6>
+					</div>
+				</div>
+				<div class="item-info2">
+					<div class="text">
+						<h2>“情怀”背壳</h2>
+						<h6>为了那些改变人类进程的足迹</h6>
+						<p><span>￥</span>99</p>
+					</div>
+					<img src="images/1x.jpg" class="special-03 " />
+				</div>
+			</div>
+			<!--S item-smartisan-tshirt-->
+			<div class="item-smartisan-tshirt">
+				<div class="item ">
+					<img src="images/smartisan-t-man.png" />
+					<div class="item-info-color"></div>
+					<div class="text1">
+						<h2>Smartisan T 男款</h2>
+						<h6>100% 美国 SUPIMA 棉 T 恤衫</h6>
+						<p><span>￥</span>199</p>
+					</div>
+				</div>
+				<div class="tshirt-woman item ">
+					<img src="images/smartisan-t-woman.png" />
+					<div class="item-info-color"></div>
+					<div class="text1">
+						<h2>Smartisan T 女款</h2>
+						<h6>100% 美国 SUPIMA 棉 T 恤衫</h6>
+						<p><span>￥</span>199</p>
+					</div>
+				</div>
+				<div class="item ">
+					<img src="images/doodle-list.png" />
+					<div class="text1">
+						<h2>往期“情怀”背壳</h2>
+						<h6>为了那些改变人类进程的足迹</h6>
+						<p><span>￥</span>99</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="product-show-box">
+			<div class="item-info">
+				<div class="item-info1">
+					<img src="images/home-special-01.png" class="special-01" />
+					<div class="text">
+						<h2>七款彩色不透明保护套</h2>
+						<h6>仅适用于坚果手机</h6>
+						<p><span>￥</span>29</p>
+					</div>
+				</div>
+				<div class="item-info1">
+					<img src="images/home-prod-insurance.png" class="special-02 " />
+					<div class="text">
+						<h2>手机意外保修服务</h2>
+						<h6>“免费一次主机更换 ? ” “免费两次维修 ? ”</h6>
+					</div>
+				</div>
+				<div class="item-info2">
+					<div class="text">
+						<h2>“情怀”背壳</h2>
+						<h6>为了那些改变人类进程的足迹</h6>
+						<p><span>￥</span>99</p>
+					</div>
+					<img src="images/1x.jpg" class="special-03 " />
+				</div>
+			</div>
+			<div class="item-smartisan-tshirt">
+				<div class="item ">
+					<img src="images/smartisan-t-man.png" />
+					<div class="item-info-color"></div>
+					<div class="text1">
+						<h2>Smartisan T 男款</h2>
+						<h6>100% 美国 SUPIMA 棉 T 恤衫</h6>
+						<p><span>￥</span>199</p>
+					</div>
+				</div>
+				<div class="tshirt-woman item ">
+					<img src="images/smartisan-t-woman.png" />
+					<div class="item-info-color"></div>
+					<div class="text1">
+						<h2>Smartisan T 女款</h2>
+						<h6>100% 美国 SUPIMA 棉 T 恤衫</h6>
+						<p><span>￥</span>199</p>
+					</div>
+				</div>
+				<div class="item ">
+					<img src="images/doodle-list.png" />
+					<div class="text1">
+						<h2>往期“情怀”背壳</h2>
+						<h6>为了那些改变人类进程的足迹</h6>
+						<p><span>￥</span>99</p>
+					</div>
+				</div>
+			</div>
+			<!--E product-show-box-->		
+		</div>
+		<!--E content-->
+		<!--S shopping-info-->
+		<ul class="shopping-info">
+			<li class="online-services">
+				<span class="online"></span>
+				<h5>在线客服</h5>
+				<h6>周一至周日 9:00-18:00</h6>
+			</li>
+			<li class="online-services">
+				<span class="online1"></span>
+				<h5>7 天无理由退货</h5>
+				<h6>7 天无理由退货 请放心购买</h6>
+			</li>
+			<li class="online-services">
+				<span class="online2"></span>
+				<h5>15 天免费换货</h5>
+				<h6>15 天内如遇质量问题 免费换货</h6>
+			</li>
+			<li class="online-services">
+				<span class="online3"></span>
+				<h5>满 150 元免运费</h5>
+				<h6>全场使用顺丰快递</h6>
+			</li>
+		</ul>
+		<!--E shopping-info-->
+
+		<div class="footer">
+			<div class="service">
+				<div class="info">
+					<ul>
+						<li><h3>订单服务</h3></li>
+						<li><a href="http://www.smartisan.com/#/instruction" target="_blank">购买指南</a></li>
+						<li><a href="http://www.smartisan.com/#/payment" target="_blank">支付方式</a></li>
+						<li><a href="http://www.smartisan.com/#/delivery" target="_blank">送货政策</a></li>
+					</ul>
+					<ul>
+						<li><h3>服务支持</h3></li>
+						<li><a href="http://www.smartisan.com/#/instruction" target="_blank">售后服务</a></li>
+						<li><a href="http://www.smartisan.com/#/payment" target="_blank">维修门店</a></li>
+						<li><a href="http://www.smartisan.com/#/delivery" target="_blank">零售门店</a></li>
+					</ul>
+					<ul>
+						<li><h3>媒体中心</h3></li>
+						<li><a href="http://www.smartisan.com/#/instruction" target="_blank">新闻动态</a></li>
+						<li><a href="http://www.smartisan.com/#/payment" target="_blank">官方视频</a></li>
+						<li><a href="http://www.smartisan.com/#/delivery" target="_blank">图片资源</a></li>
+					</ul>
+					<ul>
+						<li><h3>关于公司</h3></li>
+						<li><a href="http://www.smartisan.com/#/instruction" target="_blank">公司简介</a></li>
+						<li><a href="http://www.smartisan.com/#/payment" target="_blank">加入我们</a></li>
+						<li><a href="http://www.smartisan.com/#/delivery" target="_blank">联系我们</a></li>
+					</ul>
+					<ul>
+						<li><h3>关注我们</h3></li>
+						<li><a href="http://www.smartisan.com/#/instruction" target="_blank">新浪微博</a></li>
+						<li><a href="http://www.smartisan.com/#/payment" target="_blank">官方微信</a></li>
+						<li><a href="http://www.smartisan.com/#/delivery" target="_blank">官方贴吧</a></li>
+					</ul>
+					<div class="online">
+						<a href="###" class="consult">在线咨询</a>
+						<p>
+							<a href="tel:4006190909">400-619-0909</a>
+							<span>周一至周日 9:00-18:00（仅收市话费</span>
+						</p>
+					</div>
+				</div>
+				<div class="copy-label">
+					<p>
+						Copyright &copy; 2016, Smartisan Digital Co., Ltd. All Rights Reserved. 北京锤子数码科技有限公司 | <a href="###">法律声明</a> | <a href="###">隐私条款</a>
+					</p>
+					<span>京ICP备14041720号-1 京ICP证140622号 京公网安备11010502025474</span>
+				</div>
+			</div>
+
+		<div id="button"></div>
+		</div>
+
+
+
+	<script type="text/JavaScript" src="js/jquery-1.11.2.min.js"></script>
+	<script type="text/JavaScript">
+		
+		$(function(){
+		
+			var _index = 0;
+			var bannerTimer = null;
+			var _length = $(".ulList li").length;
+			$(".list1").width(_length*26);//动态计算包裹小按钮的ul的宽度
+			for(var i = 0 ; i<_length ; i++){
+				var select = "";
+				if(i == 0)select = "select";
+				$(".list1").append("<li class='list1_btn1 "+select+"'></li>");
+			}
+
+			$("#content").find(".list1 li").click(function(){			
+				/*addClass添加class样式 removeClass移除class样式*/
+	/*找到当前点击的li给他添加一个select的类样式同时移除掉li同级元素的select类样式*/
+				$(this).addClass("select").siblings().removeClass("select");
+				_index = $(this).index();//获得当前点击的li的座位号
+				$("#content").find(".ulList li").eq(_index).fadeIn(600).siblings().fadeOut(600);	
+			});
+			
+			//自动播放
+			function autoPlay(){
+				bannerTimer = setInterval(function(){//setInterval 设定一个定时器
+					_index++;//自身加1
+					if(_index>_length-1){_index=0}
+					console.log(_index)
+					$("#content").find(".list1 li").eq(_index).addClass("select").siblings().removeClass("select");
+					$("#content").find(".ulList li").eq(_index).fadeIn(600).siblings().fadeOut(600);	
+				},3000);
+			}
+			autoPlay();
+			
+			//清除定时器
+			$(".ulList").hover(function(){
+				clearInterval(bannerTimer);
+			},function(){
+				autoPlay();//启动定时器
+			});	
+
+			$(window).scroll(function(){
+					if($(this).scrollTop()>=200){
+						$("#button").fadeIn();
+					}else{
+						$("#button").fadeOut();
+					}
+					});
+					$("#button").click(function(){
+						//$("html,body").scrollTop(0);
+						$("html,body").animate({"scrollTop":0},300);
+				});
+
+				
+		});
+				
+	</script>
+
+</body>
+</html>
